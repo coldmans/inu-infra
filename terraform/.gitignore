@@ -1,0 +1,8 @@
+account.json
+*.json
+*.tfstate
+*.tfstate.*
+crash.log
+.terraform/
+.terraform*
+*.backup
