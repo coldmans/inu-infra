@@ -1,0 +1,19 @@
+# 실제 값으로 채워 terraform.tfvars 로 저장 (git 미추적)
+# OCID 는 OCI 콘솔 > 프로파일 > 테넌시 에서 복사
+
+tenancy_ocid     = "ocid1.tenancy.oc1..aaaa..."
+compartment_ocid = "ocid1.tenancy.oc1..aaaa..." # 루트 컴파트먼트면 테넌시와 동일
+
+ssh_authorized_keys = [
+  # ~/.ssh/inu_actions.pub 내용 (GitHub Actions 배포용)
+  "ssh-ed25519 AAAA... actions",
+  # ~/.ssh/id_ed25519.pub 내용 (로컬 접속용)
+  "ssh-ed25519 AAAA... local",
+]
+
+# 기본값은 Docker Hub amd64 이미지와 맞는 Always Free AMD micro.
+# ARM A1.Flex 용량이 있을 때만 아래 셰이프로 바꾸고 OCPU/메모리를 조절.
+# instance_shape = "VM.Standard.A1.Flex"
+# ocpus         = 2
+# memory_in_gbs = 12
+# ad_number     = 1
